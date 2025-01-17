@@ -38,15 +38,6 @@ public class CustomerOrderController {
 	@Autowired
 	private ProductService productService;
 	
-	/*
-	 * @GetMapping("/getAllC") public ResponseEntity<List<Product>>
-	 * getAllProducts(){ List<Product> products = productService.getAllProducts();
-	 * return ResponseEntity.ok(products); }
-	 * 
-	 * @GetMapping("/getProductById") public ResponseEntity<Product>
-	 * getProductById(@RequestParam String productId){ Product product =
-	 * productService.getProduct(productId); return ResponseEntity.ok(product); }
-	 */
 	
 	@PostMapping("/addCustomerOrder")
 	public ResponseEntity<CustomerOrder> addCustomerOrder(@RequestParam String customerName, @RequestParam String orderDate, @RequestParam String products){
@@ -63,10 +54,6 @@ public class CustomerOrderController {
 		
 		CustomerOrder custOrder = customerOrderService.createCustomerOrder(customerName, products, convertStringToDate(orderDate));
 		return ResponseEntity.ok(custOrder);
-		/*
-		 * Product product = productService.addProduct(productId, productName,
-		 * productPrice, products); return ResponseEntity.ok(product);
-		 */
 	}
 	
 	public Date convertStringToDate(String orderDateStr) {
