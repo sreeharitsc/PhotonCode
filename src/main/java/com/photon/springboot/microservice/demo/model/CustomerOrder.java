@@ -23,11 +23,7 @@ public class CustomerOrder {
 	private String customerName;
 	private Date orderDate;
 	
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name = "productId")
-	 */
+	
 	private String products;
 
 	public Long getOrderId() {
@@ -62,11 +58,7 @@ public class CustomerOrder {
 		this.products = products;
 	}
 
-	/*
-	 * public Set<Product> getProducts() { return products; }
-	 * 
-	 * public void setProducts(Set<Product> products) { this.products = products; }
-	 */
+	
 	
 	
 }
